@@ -14,3 +14,17 @@ Recipe notes
   ]
 }
 
+- Webpack
+
+ - loaders -> applied transformations during bundling
+ - Plugins -> applied transformations to output
+
+
+module: {
+rules: [
+{
+test: /\.js$/,
+loader: ''
+}
+]
+}
