@@ -1,0 +1,16 @@
+Recipe notes
+
+
+- Babel
+
+./node_modules/.bin/babel index.js -o ./bundle.js --presets=es2015
+- [bable path (local)] [target] [write new file] [file name] [preset config (needs independent instalation)]
+
+.babelrc -> File that works as a configuration for compiler
+
+{
+  "presets": [
+    "es2015"
+  ]
+}
+
