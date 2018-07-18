@@ -38,3 +38,10 @@ module.exports = {
   }
 }
 
+define plugin -> replaces instances of variables globally when packing
+
+    new webpack.DefinePlugin({
+      API_URL: JSON.stringify(process.env.API_URL)
+    })
+
+http://reactrecipes.herokuapp.com/v1/recipes
