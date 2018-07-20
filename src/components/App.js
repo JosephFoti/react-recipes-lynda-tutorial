@@ -4,6 +4,7 @@ import Home from './Home';
 import Favorites from './Favorites';
 import Header from './Header';
 import NotFound from './NotFound';
+import Recipe from './Recipe';
 
 class App extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class App extends React.Component {
                 />
               )}
             />
+            <Route path="/recipe/:id" component={Recipe} />
             <Route component={NotFound} />
           </Switch>
         </main>
