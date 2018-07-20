@@ -1,3 +1,7 @@
 .border-bottom-dashed {
   border-bottom: dashed;
 }
+
+.border-width {
+  border-width: 1px;
+}

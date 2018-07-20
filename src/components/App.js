@@ -1,39 +1,32 @@
 import React from 'react';
-import Header from './Header.js';
-import RecipeList from './RecipeList.js';
-import RecipeDetail from './RecipeDetail.js';
+import Header from './Header';
+import RecipeList from './RecipeList';
+import RecipeDetail from './RecipeDetail';
 
 
-
-class App extends React.Component  {
-
+class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       recipes: [],
-      currentRecipe: null
-    }
-
+      currentRecipe: null,
+    };
   }
 
   componentDidMount() {
-
-    fetch(API_URL + '/v1/recipes')
-    .then(res=>res.json())
-    .then(recipes=> {
-      this.setState({ recipes });
-    })
-
+    fetch(`${API_URL}/v1/recipes`)
+      .then(res => res.json())
+      .then((recipes) => {
+        this.setState({ recipes });
+      });
   }
 
   onRecipeClick = (id) => {
-
     fetch(`${API_URL}/v1/recipes/${id}`)
-    .then(res=>res.json())
-    .then(recipe => {
-      this.setState({ currentRecipe: recipe });
-    })
-
+      .then(res => res.json())
+      .then((recipe) => {
+        this.setState({ currentRecipe: recipe });
+      });
   }
 
   render() {
@@ -43,23 +36,22 @@ class App extends React.Component  {
         <Header />
         <main className="px4 flex">
 
-        <RecipeList
-          onClick={this.onRecipeClick}
-          recipes={recipes}
-          style={{ flex:3 }}
+          <RecipeList
+            onClick={this.onRecipeClick}
+            recipes={recipes}
+            style={{ flex: 3 }}
           />
 
-        <RecipeDetail
-          style={{ flex:5 }}
-          className="ml4"
-          recipe={currentRecipe}
+          <RecipeDetail
+            style={{ flex: 5 }}
+            className="ml4"
+            recipe={currentRecipe}
           />
         </main>
       </div>
-    )
+    );
   }
 }
-
 
 
 export default App;
