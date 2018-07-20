@@ -1,4 +1,5 @@
 import React from 'react';
+import PropType from 'prop-types';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
 
@@ -6,17 +7,8 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: [],
       currentRecipe: null,
     };
-  }
-
-  componentDidMount() {
-    fetch(`${API_URL}/v1/recipes`)
-      .then(res => res.json())
-      .then(recipes => {
-        this.setState({ recipes });
-      });
   }
 
   onRecipeClick = id => {
@@ -28,19 +20,25 @@ class Home extends React.Component {
   };
 
   render() {
-    const { recipes, currentRecipe } = this.state;
+    const { currentRecipe } = this.state;
+    const { recipes, favorites } = this.props.state;
+
     return (
       <div>
         <main className="px4 flex">
-          <RecipeList
-            onClick={this.onRecipeClick}
-            recipes={recipes}
-            style={{ flex: 3 }}
-          />
-
+          <div>
+            <h2 className="h2">Recipe List</h2>
+            <RecipeList
+              recipes={recipes}
+              favorites={favorites}
+              style={{ flex: 3 }}
+              onClick={this.onRecipeClick}
+              onFavorited={this.props.toggleFavorite}
+            />
+          </div>
           <RecipeDetail
             style={{ flex: 5 }}
-            className="ml4"
+            className="ml4 px4"
             recipe={currentRecipe}
           />
         </main>
@@ -48,5 +46,10 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.propTypes = {
+  toggleFavorite: PropType.func,
+  state: PropType.object,
+};
 
 export default Home;

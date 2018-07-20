@@ -5,18 +5,63 @@ import Favorites from './Favorites';
 import Header from './Header';
 import NotFound from './NotFound';
 
-const App = () => (
-  <BrowserRouter>
-    <main>
-      <Header />
-      <Switch>
-        <Redirect from="/home" to="/" />
-        <Route exact path="/" component={Home} />
-        <Route path="/favorites" component={Favorites} />
-        <Route component={NotFound} />
-      </Switch>
-    </main>
-  </BrowserRouter>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipes: [],
+      favorites: [],
+    };
+  }
 
-module.exports = App;
+  componentDidMount() {
+    fetch(`${API_URL}/v1/recipes`)
+      .then(res => res.json())
+      .then(recipes => {
+        this.setState({ recipes });
+      });
+  }
+
+  toggleFavorite = id => {
+    console.log(this.state.favorites);
+    this.setState(({ favorites, ...state }) => {
+      const idx = favorites.indexOf(id);
+      if (idx !== -1) {
+        return { ...state, favorites: favorites.filter(f => f !== id) };
+      }
+      return { ...state, favorites: [...favorites, id] };
+    });
+  };
+
+  render() {
+    return (
+      <BrowserRouter>
+        <main>
+          <Header />
+          <Switch>
+            <Redirect from="/home" to="/" />
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <Home state={this.state} toggleFavorite={this.toggleFavorite} />
+              )}
+            />
+            <Route
+              path="/favorites"
+              render={() => (
+                <Favorites
+                  state={this.state}
+                  toggleFavorite={this.toggleFavorite}
+                />
+              )}
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;
