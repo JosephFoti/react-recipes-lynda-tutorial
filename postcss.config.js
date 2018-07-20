@@ -3,7 +3,7 @@ const postcssImport = require('postcss-import');
 
 module.exports = {
   plugins: [
-    postCssNext,
-    postcssImport
+    postcssImport,
+    postCssNext
   ]
 }

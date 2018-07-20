@@ -1,3 +1,28 @@
 @import 'basscss';
 @import 'basscss-colors';
 @import 'basscss-background-colors';
+@import './borders';
+@import './fonts';
+@import './shame';
+
+:root {
+  --h1: 70px;
+  --h2: 50px;
+  --black: #222;
+  --lime: #cdebbd;
+}
+
+* {
+  margin: 0;
+  color: var(--black);
+  font-family: 'Open-Sans', sans-serif;
+}
+
+body {
+  background-color: var(--lime);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.4em 0px;
+  font-family: 'Oswald'
+}
