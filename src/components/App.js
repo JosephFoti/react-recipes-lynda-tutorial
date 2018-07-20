@@ -3,7 +3,6 @@ import Header from './Header';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,18 +15,18 @@ class App extends React.Component {
   componentDidMount() {
     fetch(`${API_URL}/v1/recipes`)
       .then(res => res.json())
-      .then((recipes) => {
+      .then(recipes => {
         this.setState({ recipes });
       });
   }
 
-  onRecipeClick = (id) => {
+  onRecipeClick = id => {
     fetch(`${API_URL}/v1/recipes/${id}`)
       .then(res => res.json())
-      .then((recipe) => {
+      .then(recipe => {
         this.setState({ currentRecipe: recipe });
       });
-  }
+  };
 
   render() {
     const { recipes, currentRecipe } = this.state;
@@ -35,7 +34,6 @@ class App extends React.Component {
       <div>
         <Header />
         <main className="px4 flex">
-
           <RecipeList
             onClick={this.onRecipeClick}
             recipes={recipes}
@@ -52,6 +50,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;

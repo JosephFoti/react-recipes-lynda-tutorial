@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const RecipeDetail = (props) => {
+const RecipeDetail = props => {
   if (!props.recipe) {
     return (
       <p
@@ -15,55 +15,28 @@ const RecipeDetail = (props) => {
   }
 
   return (
-
     <div
       style={props.style}
       className={classNames('p2 bg-white', props.className)}
     >
-      <h2 className="h2">
-        {props.recipe.name}
-      </h2>
+      <h2 className="h2">{props.recipe.name}</h2>
       <img className="fit" src={props.recipe.image} alt={props.recipe.name} />
       <div>
-        <span>
-          {props.recipe.category}
-        </span>
-        <span>
-          {props.recipe.calories}
-        </span>
+        <span>{props.recipe.category}</span>
+        <span>{props.recipe.calories}</span>
       </div>
-      <h3>
-        Ingredients
-      </h3>
+      <h3>Ingredients</h3>
 
       <ul>
-
         {props.recipe.ingredients.map(ingredient => (
-          <li
-            key={ingredient}
-          >
-            {ingredient}
-          </li>
+          <li key={ingredient}>{ingredient}</li>
         ))}
-
       </ul>
 
-      <h3>
-        Steps
-      </h3>
+      <h3>Steps</h3>
 
-      <ol>
-
-        {props.recipe.steps.map(step => (
-          <li key={step}>
-            {step}
-          </li>
-        ))}
-      </ol>
-
-
+      <ol>{props.recipe.steps.map(step => <li key={step}>{step}</li>)}</ol>
     </div>
-
   );
 };
 

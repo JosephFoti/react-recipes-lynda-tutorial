@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 require('dotenv').config();
 
-
 module.exports = {
   entry: ['whatwg-fetch', './index.js'],
   mode: 'development',
@@ -14,19 +13,21 @@ module.exports = {
     filename: './bundle.js',
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    },
-    {
-      test: /\.css/,
-      loader: ['style-loader', 'css-loader', 'postcss-loader'],
-    },
-    {
-      test: /\.(png|jpg)$/,
-      loader: 'file-loader',
-    }],
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.css/,
+        loader: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

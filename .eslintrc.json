@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-    "extends": "airbnb",
+    "extends": ["prettier","airbnb"],
     "env": {
       "es6": true,
       "browser": true
@@ -9,12 +9,14 @@
       "API_URL": true
     },
     "rules": {
+      "arrow-parens": 0,
+      "react/jsx-one-expression-per-line": 0,
       "react/jsx-filename-extension": 0,
       "react/forbid-prop-types": 0,
        "react/require-default-props": 0,
        "react/destructuring-assignment": 0,
        "jsx-a11y/click-events-have-key-events":0 ,
-       "jsx-a11y/no-noninteractive-element-interactions":0
-
+       "jsx-a11y/no-noninteractive-element-interactions":0,
+       "comma-dangle":0
     }
 }

@@ -6,7 +6,15 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/webpack",
-    "lint": "./node_modules/.bin/eslint ./src"
+    "lint": "./node_modules/.bin/eslint ./src",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -17,12 +25,15 @@
     "dotenv": "^6.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "lint-staged": "^7.2.0",
     "postcss-loader": "^2.1.6",
+    "prettier": "^1.13.7",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8",
