@@ -6,6 +6,7 @@ const RecipeList = ({ style, favorites, recipes, ...props }) => (
   <ul className="list-reset">
     {recipes.map(recipe => (
       <RecipeListItem
+        key={recipe.id}
         recipe={recipe}
         favorited={favorites.includes(recipe.id)}
         {...props}
@@ -18,6 +19,11 @@ RecipeList.propTypes = {
   recipes: PropTypes.array,
   style: PropTypes.object,
   favorites: PropTypes.array,
+};
+
+RecipeList.defaultProps = {
+  recipes: [],
+  favorites: [],
 };
 
 export default RecipeList;

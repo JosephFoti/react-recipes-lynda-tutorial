@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeList /> Render correctly 1`] = `
+<ul
+  className="list-reset"
+>
+  <li
+    className="py2 border-bottom border-bottom-dashed border-width pointer"
+    onClick={[Function]}
+  >
+    <span
+      aria-label="favorite"
+      className="mr1"
+      onClick={[Function]}
+      role="img"
+    >
+      ◻️
+    </span>
+    <span>
+      Test Recipe
+    </span>
+    <span>
+      Test category
+    </span>
+  </li>
+  <li
+    className="py2 border-bottom border-bottom-dashed border-width pointer"
+    onClick={[Function]}
+  >
+    <span
+      aria-label="favorite"
+      className="mr1"
+      onClick={[Function]}
+      role="img"
+    >
+      ◻️
+    </span>
+    <span>
+      Test Recipe 2
+    </span>
+    <span>
+      Test category 2
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`<RecipeList /> Render favorite correctly 1`] = `
+<ul
+  className="list-reset"
+>
+  <li
+    className="py2 border-bottom border-bottom-dashed border-width pointer"
+    onClick={[Function]}
+  >
+    <span
+      aria-label="favorite"
+      className="mr1"
+      onClick={[Function]}
+      role="img"
+    >
+      ✅
+    </span>
+    <span>
+      Test Recipe
+    </span>
+    <span>
+      Test category
+    </span>
+  </li>
+  <li
+    className="py2 border-bottom border-bottom-dashed border-width pointer"
+    onClick={[Function]}
+  >
+    <span
+      aria-label="favorite"
+      className="mr1"
+      onClick={[Function]}
+      role="img"
+    >
+      ✅
+    </span>
+    <span>
+      Test Recipe 2
+    </span>
+    <span>
+      Test category 2
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`<RecipeList /> Should not break withour recipe 1`] = `
+<ul
+  className="list-reset"
+/>
+`;

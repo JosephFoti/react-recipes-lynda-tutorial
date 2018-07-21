@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeDetail /> Should assign ClassName 1`] = `
+<div
+  className="p2 bg-white classname"
+>
+  <h2
+    className="h2"
+  >
+    Test Recipe
+  </h2>
+  <img
+    alt="Test Recipe"
+    className="fit"
+  />
+  <div>
+    <span>
+      Test category
+    </span>
+    <span />
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <ul>
+    <li>
+      ing1
+    </li>
+    <li>
+      ing2
+    </li>
+  </ul>
+  <h3>
+    Steps
+  </h3>
+  <ol>
+    <li>
+      stp1
+    </li>
+    <li>
+      stp2
+    </li>
+  </ol>
+  <a
+    href="/recipe/1"
+    onClick={[Function]}
+  >
+    See More
+  </a>
+</div>
+`;
+
+exports[`<RecipeDetail /> Should recipe without ingredients 1`] = `
+<div
+  className="p2 bg-white"
+>
+  <h2
+    className="h2"
+  >
+    Test Recipe
+  </h2>
+  <img
+    alt="Test Recipe"
+    className="fit"
+  />
+  <div>
+    <span>
+      Test category
+    </span>
+    <span />
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <h3>
+    Steps
+  </h3>
+  <ol>
+    <li>
+      stp1
+    </li>
+    <li>
+      stp2
+    </li>
+  </ol>
+  <a
+    href="/recipe/1"
+    onClick={[Function]}
+  >
+    See More
+  </a>
+</div>
+`;
+
+exports[`<RecipeDetail /> Should recipe without steps 1`] = `
+<div
+  className="p2 bg-white"
+>
+  <h2
+    className="h2"
+  >
+    Test Recipe
+  </h2>
+  <img
+    alt="Test Recipe"
+    className="fit"
+  />
+  <div>
+    <span>
+      Test category
+    </span>
+    <span />
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <ul>
+    <li>
+      ing1
+    </li>
+    <li>
+      ing2
+    </li>
+  </ul>
+  <h3>
+    Steps
+  </h3>
+  <a
+    href="/recipe/1"
+    onClick={[Function]}
+  >
+    See More
+  </a>
+</div>
+`;
+
+exports[`<RecipeDetail /> Should render recipe 1`] = `
+<div
+  className="p2 bg-white"
+>
+  <h2
+    className="h2"
+  >
+    Test Recipe
+  </h2>
+  <img
+    alt="Test Recipe"
+    className="fit"
+  />
+  <div>
+    <span>
+      Test category
+    </span>
+    <span />
+  </div>
+  <h3>
+    Ingredients
+  </h3>
+  <ul>
+    <li>
+      ing1
+    </li>
+    <li>
+      ing2
+    </li>
+  </ul>
+  <h3>
+    Steps
+  </h3>
+  <ol>
+    <li>
+      stp1
+    </li>
+    <li>
+      stp2
+    </li>
+  </ol>
+  <a
+    href="/recipe/1"
+    onClick={[Function]}
+  >
+    See More
+  </a>
+</div>
+`;
+
+exports[`<RecipeDetail /> Should render zero state 1`] = `
+<p
+  className="h3 p2 bg-white italic center"
+>
+  Please select a recipe to see the detail
+</p>
+`;

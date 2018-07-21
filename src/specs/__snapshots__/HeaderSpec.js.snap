@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Should render correctly 1`] = `
+<header
+  className="flex items-center justify-between px4"
+>
+  <div>
+    <h1
+      className="h1 inline-block mr2"
+    >
+      🍽 My Recipes
+    </h1>
+    <span
+      className="mr2"
+    >
+      by
+    </span>
+    <img
+      alt="A dog dressed like a man"
+      src="test-file-stub"
+      style={
+        Object {
+          "width": 30,
+        }
+      }
+    />
+  </div>
+  <nav>
+    <a
+      aria-current={null}
+      className="p1 mx2 black rounded text-decoration-none"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      aria-current={null}
+      className="p1 mx2 black rounded text-decoration-none"
+      href="/favorites"
+      onClick={[Function]}
+    >
+      Favorites
+    </a>
+  </nav>
+</header>
+`;
