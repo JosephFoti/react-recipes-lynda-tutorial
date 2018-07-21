@@ -9,6 +9,13 @@ const testRecipe = {
   category: 'Test category',
 };
 
+/*
+
+Testing with Jest
+config syntax -> jest.config.js
+
+*/
+
 describe('<RecipeListItem />', () => {
   test('Should not break if no recipe passed', () => {
     const component = renderer.create(<RecipeListItem />);
