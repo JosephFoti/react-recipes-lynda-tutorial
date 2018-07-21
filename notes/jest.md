@@ -43,5 +43,22 @@
     Enzyme.configure({ adapter: new Adapter() });
 
     ```
+#### Usage
 
-    
+  - Jest is meant to provide a way to test components and save snapshots of your results. Jest renders and compares snapshots to evaluate if the test passed or failed
+
+  - yarn test -> /node_modules/.bin/jest -- -u resets the snapshots and re-runds the tests
+
+  - Write a describe function, with a name and insert child tests into that parent describe, with new files for each component you test.
+
+  - Enzyme facilitates testing click events and mimics the jQuery DOM traversal methods.
+
+#### Dependencies
+
+  ```json
+
+  "enzyme": "^3.3.0",
+  "enzyme-adapter-react-16": "^1.1.1",
+  "jest": "^23.4.1",
+
+  ```
