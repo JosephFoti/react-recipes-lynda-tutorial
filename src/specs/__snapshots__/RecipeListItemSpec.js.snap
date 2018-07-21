@@ -39,3 +39,47 @@ exports[`<RecipeListItem /> Should not break if no recipe passed 1`] = `
   <span />
 </li>
 `;
+
+exports[`<RecipeListItem /> Should render favorited state 1`] = `
+<li
+  className="py2 border-bottom border-bottom-dashed border-width pointer"
+  onClick={[Function]}
+>
+  <span
+    aria-label="favorite"
+    className="mr1"
+    onClick={[Function]}
+    role="img"
+  >
+    ✅
+  </span>
+  <span>
+    Test Recipe
+  </span>
+  <span>
+    Test category
+  </span>
+</li>
+`;
+
+exports[`<RecipeListItem /> Should render onFavorited when favorited 1`] = `
+<li
+  className="py2 border-bottom border-bottom-dashed border-width pointer"
+  onClick={[Function]}
+>
+  <span
+    aria-label="favorite"
+    className="mr1"
+    onClick={[Function]}
+    role="img"
+  >
+    ✅
+  </span>
+  <span>
+    Test Recipe
+  </span>
+  <span>
+    Test category
+  </span>
+</li>
+`;
